@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-brand-primary: #E07B1A; /* Primary Orange — spec #E07B1A */
+  --color-brand-secondary: #C8262E; /* Secondary Red — spec #C8262E */
+  --color-brand-black: #111111; /* Premium Black */
+  --color-brand-gray-dark: #1A1A1A; /* Dark Gray */
+  --color-brand-gray-light: #F7F7F7; /* Light Gray */
+
+  --color-background: #ffffff;
+  --color-surface: #F8FAFC; /* Surface background */
+  --color-foreground: #111827;
+  --color-text-secondary: #6B7280;
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: var(--font-poppins), var(--font-sans);
+
+  /* Spacing */
+  --spacing-1: 0.5rem; /* 8px based spacing scale */
+  
+  /* Border Radius */
+  --radius-card: 1.5rem; /* 24px */
+
+  /* Shadows */
+  --shadow-soft: 0 8px 32px rgba(17, 17, 17, 0.08);
+  --shadow-hover: 0 20px 60px rgba(17, 17, 17, 0.15);
+
+  /* Animations */
+  --animate-fade-up: fadeUp 0.6s ease forwards;
+  --animate-pulse-cta: pulseCta 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseCta {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4); }
+    50% { box-shadow: 0 0 0 20px rgba(255, 107, 0, 0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600; /* SemiBold as requested */
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-dark {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-primary);
+  border-radius: 3px;
+}
+
+/* ─── Selection ──────────────────────────────────────────────── */
