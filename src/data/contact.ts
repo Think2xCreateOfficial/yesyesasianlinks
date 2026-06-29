@@ -9,8 +9,8 @@ export const contactData: ContentItem[] = [
   {
     id: "contact-whatsapp",
     title: "WhatsApp",
-    description: "Chat with our sourcing experts instantly.",
-    href: "https://wa.me/861234567890",
+    description: "Chat with our experts instantly.",
+    href: "https://wa.me/918124200079",
     icon: "MessageCircle",
     cta: "Chat Now",
   },
@@ -26,15 +26,15 @@ export const contactData: ContentItem[] = [
     id: "contact-phone",
     title: "Call Us",
     description: "Speak directly to our representatives.",
-    href: "tel:+8612345678900",
+    href: "tel:+918124200079",
     icon: "Phone",
     cta: "Call Now",
   },
   {
     id: "contact-office",
     title: "Visit Our Office",
-    description: "Guangzhou, China (By Appointment)",
-    href: "https://maps.google.com",
+    description: "Tirupur, India",
+    href: "https://maps.app.goo.gl/k3xHWezR7u7vT1wS6",
     icon: "MapPin",
     cta: "Get Directions",
   },
@@ -49,7 +49,7 @@ export const CONTACT_HERO_CONTENT = {
   description:
     "Ready to source from China with confidence? Share your requirements and our team will craft a tailored strategy — from factory selection to doorstep delivery.",
   backgroundImage:
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1920&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1777124576697-eb529593d131?w=600&auto=format&fit=crop",
   trustBadges: [
     { icon: "Clock", text: "Reply within 24hrs" },
     { icon: "ShieldCheck", text: "Free initial consultation" },
@@ -194,19 +194,19 @@ export const CONTACT_FORM_CONTENT = {
 
 export const CONTACT_INFO_CONTENT = {
   heading: "Reach Us Directly",
-  subheading: "We are based in Guangzhou, China — available Mon–Sat, 9AM–7PM CST.",
+  subheading: "We are based in Tirupur, India.",
   whatsappLabel: "WhatsApp",
   phoneLabel: "Phone",
   emailLabel: "Email",
   addressLabel: "Office Address",
   hoursLabel: "Business Hours",
-  hours: "Monday – Saturday: 9:00 AM – 7:00 PM (China Standard Time)",
+  hours: "Mon: 10am-5:30pm | Tue: 10:30am-8pm | Wed-Thu: 10am-7pm | Fri: 9am-7:30pm | Sat-Sun: Closed",
 };
 
 // ─── Contact Map ─────────────────────────────────────────────────────────────
 
 export const CONTACT_MAP_CONTENT = {
-  heading: "Find Us in Guangzhou",
+  heading: "Find Us in Tirupur",
   embedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d468757.8776394394!2d112.85622115!3d23.13897935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403d46e94e8b329%3A0x99e3e66a1aae4b31!2sGuangzhou%2C%20Guangdong%2C%20China!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.9691941353162!2d77.3164663735571!3d11.115672252847629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9072232c3b515%3A0x507c148996859cf7!2sYes%20yes%20Asian%20link!5e0!3m2!1sen!2sin!4v1782711361127!5m2!1sen!2sin",
 };

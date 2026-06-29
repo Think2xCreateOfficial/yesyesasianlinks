@@ -9,7 +9,7 @@ import { CTASection } from "@/components/common/cta-section";
 export const metadata = constructMetadata({
   title: "About Us — Your Trusted China Import & Sourcing Partner",
   description:
-    "Learn about YES YES ASIAN LINK — your trusted China import and sourcing consultancy with 10+ years on the ground in Guangzhou. 500+ verified factories, $50M+ sourced value.",
+    "Learn about YES YES ASIAN LINK — your trusted China import and sourcing consultancy with 10+ years on the ground in Guangzhou. 100+verified factories, $10M+ sourced value.",
   path: "/about",
 });
 

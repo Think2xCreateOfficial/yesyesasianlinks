@@ -20,7 +20,7 @@ export const HOW_IT_WORKS_DATA: HowItWorksStep[] = [
     step: 2,
     title: "Supplier Research & Matching",
     description:
-      "Our on-the-ground team in China researches and identifies the best-fit factories from our verified network of 500+ manufacturers.",
+      "Our on-the-ground team in China researches and identifies the best-fit factories from our verified network of 100+manufacturers.",
     icon: "Search",
   },
   {

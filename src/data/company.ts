@@ -5,10 +5,10 @@ export const companyInfo = {
   tagline: "Your Premium China Sourcing & Business Partner",
   description: "We bridge the gap between global businesses and Chinese manufacturers, offering end-to-end sourcing, verification, and business tour solutions.",
   contact: {
-    whatsapp: "+861234567890", 
-    phone: "+86 123 4567 8900",
+    whatsapp: "+918124200079", 
+    phone: "+91 8124200079",
     email: "contact@yesyesasianlink.com",
-    address: "Guangzhou, China",
+    address: "Yes Yes Asian link, 9 SARATHA NAGAR Callage road back side Tirupur india 641603",
   },
   socials: {
     linkedin: "#",

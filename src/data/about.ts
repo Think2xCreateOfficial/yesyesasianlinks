@@ -17,7 +17,7 @@ export const ABOUT_HERO_CONTENT = {
   secondaryCta: "Our Story",
   secondaryHref: "#about-story",
   backgroundImage:
-    "https://images.unsplash.com/photo-1710141943622-02667d7d4f92?w=600&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1554901106-54163e748979?w=600&auto=format&fit=crop",
   stats: [
     { value: "10+", label: "Years in China" },
     { value: "$50M+", label: "Sourced Value" },
@@ -59,7 +59,7 @@ export const ABOUT_MILESTONES: AboutMilestone[] = [
   {
     id: "milestone-2",
     year: "2015",
-    title: "500+ Factory Network",
+    title: "100+Factory Network",
     description:
       "Built a verified network of manufacturers across Guangzhou, Yiwu, Shenzhen, and Foshan.",
   },
@@ -73,9 +73,9 @@ export const ABOUT_MILESTONES: AboutMilestone[] = [
   {
     id: "milestone-4",
     year: "2023",
-    title: "$50M+ Sourced Value",
+    title: "$10M+ Sourced Value",
     description:
-      "Crossed $50 million in total sourced value for clients across 15+ countries.",
+      "Crossed $10 million in total sourced value for clients across 15+ countries.",
   },
 ];
 

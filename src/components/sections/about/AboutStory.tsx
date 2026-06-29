@@ -38,7 +38,7 @@ export function AboutStory() {
         {/* Two-column layout: Text + Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-2">
           {/* Left: Story text */}
-          <div>
+          <div className="order-2 md: order-1">
             {/* <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export function AboutStory() {
             >
               {ABOUT_STORY_CONTENT.description}
             </motion.p> */}
-            <motion.p
+            {/* <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -56,7 +56,7 @@ export function AboutStory() {
               className="text-gray-500 leading-relaxed mb-6"
             >
               {ABOUT_STORY_CONTENT.bodyText}
-            </motion.p>
+            </motion.p> */}
 
             {/* Milestones */}
             <div className="mt-4 space-y-0">
@@ -98,28 +98,58 @@ export function AboutStory() {
             </div>
           </div>
 
-          {/* Right: Image — equal height, centered */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            {/* Main image */}
-            <div className="relative rounded-xl overflow-hidden shadow-2xl" style={{ aspectRatio: "4/5", maxHeight: "600px" }}>
-              <img
-                src={ABOUT_STORY_CONTENT.image}
-                alt={ABOUT_STORY_CONTENT.imageAlt}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          {/* Right: Images — two owners */}
+          <div className="order-1 md:order-2 relative h-full w-full flex items-center mt-8 lg:mt-0">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 w-full relative z-10">
+              {/* Owner 1 Image */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="relative mt-8 md:mt-12 rounded-2xl overflow-hidden shadow-xl aspect-[3/4] group"
+              >
+                <img
+                  src="/image1.jpeg"
+                  alt="Owner 1"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+              </motion.div>
+              
+              {/* Owner 2 Image */}
+              <motion.div
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                className="relative mb-8 md:mb-12 rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] group"
+              >
+                <img
+                  src="/image2.jpeg"
+                  alt="Owner 2"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+              </motion.div>
             </div>
 
-            {/* Decorative accent */}
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-3xl bg-[var(--color-brand-primary)]/8 -z-10" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 rounded-xl bg-[var(--color-brand-black)]/5 -z-10" />
-          </motion.div>
+            {/* Decorative accents */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-32 md:w-48 h-32 md:h-48 rounded-[2rem] bg-[var(--color-brand-primary)]/10 -z-10" 
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="absolute -top-4 -left-4 md:-top-8 md:-left-8 w-24 md:w-32 h-24 md:h-32 rounded-xl bg-[var(--color-brand-black)]/5 -z-10" 
+            />
+          </div>
         </div>
       </div>
     </section>

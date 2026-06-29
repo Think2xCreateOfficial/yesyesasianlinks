@@ -10,3 +10,32 @@ export interface ContentItem {
   cta?: string;
   [key: string]: any;
 }
+
+export interface Product {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  href: string;
+  cta: string;
+  isNew: boolean;
+}
+
+export interface Category {
+  id: string;
+  label: string;
+  value: string;
+}
+
+export interface ProductCardProps {
+  product: Product;
+  index: number;
+}
+
+export interface CategoryFilterProps {
+  categories: Category[];
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
+  productCount: number;
+}

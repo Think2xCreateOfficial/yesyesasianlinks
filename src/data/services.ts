@@ -6,7 +6,7 @@ export const servicesData: ContentItem[] = [
     title: "Product Sourcing",
     description: "Find the best manufacturers for your products with our expert sourcing team in China. We negotiate prices, check quality, and manage the entire supply chain.",
     href: "/services#product-sourcing",
-    icon: "Search", 
+    icon: "Search",
     benefits: ["Direct Factory Prices", "Quality Assurance", "Time Savings"],
     process: ["Requirement Analysis", "Supplier Matching", "Sample Production", "Mass Production"]
   },
@@ -94,9 +94,9 @@ export interface ServicesBadge {
 }
 
 export const SERVICES_HERO_BADGES: ServicesBadge[] = [
-  { id: "badge-1", icon: "ShieldCheck", label: "500+ Verified Factories" },
+  { id: "badge-1", icon: "ShieldCheck", label: "100+Verified Factories" },
   { id: "badge-2", icon: "Globe", label: "10+ Years in China" },
-  { id: "badge-3", icon: "TrendingUp", label: "$50M+ Sourced Value" },
+  { id: "badge-3", icon: "TrendingUp", label: "$10M+ Sourced Value" },
 ];
 
 export const SERVICES_HERO_CONTENT = {

@@ -104,7 +104,7 @@ export const TOURS_HERO_HIGHLIGHTS: ToursHighlight[] = [
   { id: "hl-1", icon: "MapPin", label: "Guangzhou, Yiwu & Shenzhen" },
   { id: "hl-2", icon: "Clock", label: "4 to 7 Day Guided Tours" },
   { id: "hl-3", icon: "Users", label: "Bilingual Experts On-Ground" },
-  { id: "hl-4", icon: "Building2", label: "500+ Verified Factory Partners" },
+  { id: "hl-4", icon: "Building2", label: "100+Verified Factory Partners" },
   { id: "hl-5", icon: "ShieldCheck", label: "Visa Invitation Letter" },
   { id: "hl-6", icon: "Star", label: "Canton Fair VIP Access" },
 ];

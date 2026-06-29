@@ -133,7 +133,7 @@ export const toursFaqData: FaqItem[] = [
     id: "faq-tour-5",
     title: "Can I visit specific factories during the tour?",
     description:
-      "Yes. Factory visits are a core part of our tours. You can either select from our network of 500+ verified factories or share specific factory names/categories and we will arrange visits in advance.",
+      "Yes. Factory visits are a core part of our tours. You can either select from our network of 100+verified factories or share specific factory names/categories and we will arrange visits in advance.",
     category: "tours",
   },
 ];

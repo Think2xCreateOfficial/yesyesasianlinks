@@ -137,11 +137,6 @@ export function ContactMap() {
                 title="YES YES ASIAN LINK — Office Location in Guangzhou, China"
                 className="w-full h-full"
               />
-              {/* Map overlay badge */}
-              <div className="absolute top-4 right-4 bg-white/95 backdrop-blur rounded-xl px-3 py-2 shadow-lg border border-gray-100 flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[var(--color-brand-primary)] animate-pulse" />
-                <span className="text-xs font-bold text-gray-700">Guangzhou, China</span>
-              </div>
             </div>
           </div>
         </ScrollAnimation>

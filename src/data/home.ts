@@ -51,7 +51,7 @@ export const HOME_ABOUT_FEATURES: HomeFeature[] = [
     icon: "ShieldCheck",
     title: "Verified Supplier Network",
     description:
-      "Direct access to 500+ pre-audited factories across major Chinese manufacturing hubs.",
+      "Direct access to 100+pre-audited factories across major Chinese manufacturing hubs.",
   },
   {
     id: "feat-2",
@@ -80,7 +80,7 @@ export const HOME_SERVICES_HEADER = {
 // ─── Products Section (Home Page) ──────────────────────────────────────────
 
 export const HOME_PRODUCTS_HEADER = {
-  heading: "Featured Products",
+  heading: "Products",
   verifiedLabel: "Verified",
   verifiedSupplierLabel: "Verified Supplier",
   enquireLabel: "Enquire",
