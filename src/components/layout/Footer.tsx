@@ -6,6 +6,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { footerData } from "@/data/footer";
 import { navigationData } from "@/data/navigation";
+import { productCategories } from "@/data/products";
+import { generateSlug } from "@/utils/slug";
 import { Icons } from "@/components/common/Icons";
 import { getConsultationUrl } from "@/lib/whatsapp";
 
@@ -84,14 +86,35 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Sourcing Hubs */}
+          {/* Product Categories */}
           <div className="lg:col-span-3">
-            <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Sourcing Hubs</h4>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-gray-400 hover:text-[var(--color-brand-primary)] transition-colors">Guangzhou Operations</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[var(--color-brand-primary)] transition-colors">Yiwu Market Sourcing</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[var(--color-brand-primary)] transition-colors">Shenzhen Electronics</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-[var(--color-brand-primary)] transition-colors">Foshan Furniture</Link></li>
+            <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Categories</h4>
+            <ul className="space-y-3">
+              {productCategories
+                .filter((c) => c.value !== "all")
+                .slice(0, 7)
+                .map((cat) => {
+                  const slug = generateSlug(cat.value);
+                  return (
+                    <li key={cat.id}>
+                      <Link
+                        href={`/categories/${slug}`}
+                        className="text-gray-400 hover:text-[var(--color-brand-primary)] transition-colors flex items-center gap-2 text-sm"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-gray-700 shrink-0" />
+                        {cat.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              <li className="pt-1">
+                <Link
+                  href="/categories"
+                  className="text-[var(--color-brand-primary)] hover:text-white transition-colors text-sm font-medium flex items-center gap-1"
+                >
+                  View All →
+                </Link>
+              </li>
             </ul>
           </div>
 

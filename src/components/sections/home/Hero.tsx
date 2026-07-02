@@ -25,7 +25,7 @@ export function Hero() {
 
   return (
     <section className="relative pt-24 pb-6 lg:pt-36 lg:pb-8 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4 lg:px-">
+      <div className="container mx-auto px-2 lg:px-">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
 
           {/* Left Side (30%) - Business Content */}
@@ -33,7 +33,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-4 order-2 lg:order-1 flex flex-col space-y-6"
+            className="lg:col-span-4 order-2 lg:order-1 flex flex-col space-y-6 px-2 md:px-0"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm w-fit">
               <ShieldCheck className="w-4 h-4 text-[var(--color-brand-primary)]" />

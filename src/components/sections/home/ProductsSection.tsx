@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { productsData, productCategories, FEATURED_PRODUCT_IDS } from "@/data/products";
 import { HOME_PRODUCTS_HEADER } from "@/data/home";
 import { Product, Category } from "@/types/data";
-import { ChevronLeft, ChevronRight, CheckCircle, Plus, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, CheckCircle, Plus, Sparkles, ArrowRight } from "lucide-react";
 import { Icons } from "@/components/common/Icons";
 import { getProductEnquiryUrl } from "@/lib/whatsapp";
 
@@ -205,7 +205,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </Link>
           <button
             aria-label="View product details"
-            className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:border-[var(--color-brand-primary)] hover:text-[var(--color-brand-primary)] transition-colors shrink-0"
+            className="hidden w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 hover:border-[var(--color-brand-primary)] hover:text-[var(--color-brand-primary)] transition-colors shrink-0"
           >
             <Plus className="w-4 h-4" />
           </button>
@@ -247,30 +247,41 @@ export function ProductsSection() {
     <section className="py-8 bg-white" id="products">
       <div className="container mx-auto ">
         {/* Header */}
-        <div className="px-4 mb-4 ">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="px-4 mb-2 ">
+          <div className="hidden sm:flex items-center gap-3 mb-3">
             <span className="w-8 h-0.5 bg-[var(--color-brand-primary)]" />
             <span className="text-[var(--color-brand-primary)] font-bold tracking-wider uppercase text-xs">
               Our Collection
             </span>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-brand-black)]">
-            {HOME_PRODUCTS_HEADER.heading}
-          </h2>
-          <p className="text-sm text-gray-500 mt-1">
-            {totalProducts} products available
-            {activeCategory !== "all" && ` in ${activeCategory}`}
-          </p>
+          <div className="flex flex-row sm:items-start justify-between gap-3">
+            <div>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-brand-black)]">
+                {HOME_PRODUCTS_HEADER.heading}
+              </h2>
+            </div>
+            <Link
+              href="/categories"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-[var(--color-brand-primary)] text-sm font-semibold hover:translate-x-1 transition-all duration-200 self-start sm:self-auto shrink-0"
+            >
+              View All Categories
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Category Filter */}
-        <div className="mb-8">
+        <div className="mb-4">
           <CategoryFilter
             categories={productCategories}
             activeCategory={activeCategory}
             onCategoryChange={setActiveCategory}
             productCount={totalProducts}
           />
+          {/* <p className="text-sm text-gray-500 mt-1 ml-2">
+            {totalProducts} products available
+            {activeCategory !== "all" && ` in ${activeCategory}`}
+          </p> */}
         </div>
 
         {/* Products Grid */}
