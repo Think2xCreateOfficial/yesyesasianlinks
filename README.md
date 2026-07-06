@@ -1,4 +1,4 @@
-## Yes Yes Asian Links 
+## Yes Yes Asian Link
 
 First, run the development server:
 

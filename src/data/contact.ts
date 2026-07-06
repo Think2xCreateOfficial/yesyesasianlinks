@@ -18,7 +18,7 @@ export const contactData: ContentItem[] = [
     id: "contact-email",
     title: "Email Us",
     description: "Send us your detailed sourcing requirements.",
-    href: "mailto:contact@yesyesasianlink.com",
+    href: "mailto:yesyesasianlink@gmail.com",
     icon: "Mail",
     cta: "Send Email",
   },
@@ -34,7 +34,7 @@ export const contactData: ContentItem[] = [
     id: "contact-office",
     title: "Visit Our Office",
     description: "Tirupur, India",
-    href: "https://maps.app.goo.gl/k3xHWezR7u7vT1wS6",
+    href: "https://share.google/QLij4EQkGhVolWrM3",
     icon: "MapPin",
     cta: "Get Directions",
   },
@@ -53,7 +53,7 @@ export const CONTACT_HERO_CONTENT = {
   trustBadges: [
     { icon: "Clock", text: "Reply within 24hrs" },
     { icon: "ShieldCheck", text: "Free initial consultation" },
-    { icon: "Globe", text: "Serving 10+ countries" },
+    { icon: "Globe", text: "Global client reach" },
   ],
 };
 
@@ -155,11 +155,11 @@ export const CONTACT_FORM_CONTENT = {
   submittingLabel: "Preparing your message...",
   successMessage: "Redirecting to WhatsApp...",
   fields: {
-    fullName: { label: "Full Name", placeholder: "John Smith", required: true },
+    fullName: { label: "Full Name", placeholder: "Ramesh Kumar", required: true },
     companyName: {
       label: "Company Name",
       placeholder: "Acme Imports Ltd.",
-      required: false,
+      required: true,
     },
     mobile: {
       label: "Mobile / WhatsApp Number",
@@ -168,7 +168,7 @@ export const CONTACT_FORM_CONTENT = {
     },
     email: {
       label: "Email Address",
-      placeholder: "john@acmeimports.com",
+      placeholder: "rameshkumar@acmeimports.com",
       required: true,
     },
     businessType: { label: "Business Type", required: true },

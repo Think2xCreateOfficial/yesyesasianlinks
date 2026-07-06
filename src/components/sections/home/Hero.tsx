@@ -83,35 +83,37 @@ export function Hero() {
                 transition={{ duration: 0.4 }}
                 className="absolute inset-0 "
               >
-                <div className="absolute inset-0 z-10" />
-                <Image
-                  src={heroSliderData[currentSlide].image || '/placeholder.jpg'}
-                  alt={heroSliderData[currentSlide].title}
-                  fill
-                  priority={currentSlide === 0}
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                  className="object-cover"
-                />
+                <Link href="/tours" className="absolute inset-0 block">
+                  <div className="absolute inset-0 z-10" />
+                  <Image
+                    src={heroSliderData[currentSlide].image || '/placeholder.jpg'}
+                    alt={heroSliderData[currentSlide].title}
+                    fill
+                    priority={currentSlide === 0}
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="object-cover"
+                  />
 
-                {/* Slide Content Overlay */}
-                <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 lg:p-12 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
-                  <motion.h2
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-xl lg:text-3xl font-bold text-white"
-                  >
-                    {heroSliderData[currentSlide].title}
-                  </motion.h2>
-                  <motion.p
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-gray-200 text-sm lg:text-lg max-w-xl mb-8 lg:mb-0"
-                  >
-                    {heroSliderData[currentSlide].description ?? HERO_CONTENT.sliderFallbackDescription}
-                  </motion.p>
-                </div>
+                  {/* Slide Content Overlay */}
+                  <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 lg:p-12 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                    <motion.h2
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="text-xl lg:text-3xl font-bold text-white"
+                    >
+                      {heroSliderData[currentSlide].title}
+                    </motion.h2>
+                    <motion.p
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="text-gray-200 text-sm lg:text-lg max-w-xl mb-8 lg:mb-0"
+                    >
+                      {heroSliderData[currentSlide].description ?? HERO_CONTENT.sliderFallbackDescription}
+                    </motion.p>
+                  </div>
+                </Link>
               </motion.div>
             </AnimatePresence>
 

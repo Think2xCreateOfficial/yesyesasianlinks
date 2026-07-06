@@ -27,7 +27,7 @@ export function RFQBanner() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.product || !formData.quantity) {
+    if (!formData.product || !formData.quantity || !formData.company) {
       toast.error("Please fill in all required fields");
       return;
     }
@@ -37,12 +37,18 @@ export function RFQBanner() {
       formData.quantity,
       formData.unit,
       "Standard Request",
-      formData.company || "Not Provided"
+      formData.company
     );
 
     toast.success("Redirecting to WhatsApp...");
     setTimeout(() => {
       window.open(whatsappUrl, "_blank");
+      setFormData({
+        product: "",
+        quantity: "",
+        unit: HOME_RFQ_CONTENT.defaultUnit,
+        company: "",
+      });
     }, 1000);
   };
 
@@ -101,6 +107,18 @@ export function RFQBanner() {
                   <h3 className="text-2xl font-bold text-[var(--color-brand-black)] mb-6">{HOME_RFQ_CONTENT.formTitle}</h3>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">{HOME_RFQ_CONTENT.labels.company}</label>
+                      <input
+                        type="text"
+                        name="company"
+                        required
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder={HOME_RFQ_CONTENT.labels.companyPlaceholder}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] outline-none transition-all"
+                      />
+                    </div>
+                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">{HOME_RFQ_CONTENT.labels.product}</label>
                       <input
                         type="text"
@@ -138,17 +156,6 @@ export function RFQBanner() {
                           ))}
                         </select>
                       </div>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">{HOME_RFQ_CONTENT.labels.company}</label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder={HOME_RFQ_CONTENT.labels.companyPlaceholder}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--color-brand-primary)] focus:ring-1 focus:ring-[var(--color-brand-primary)] outline-none transition-all"
-                      />
                     </div>
                     <button
                       type="submit"

@@ -149,10 +149,10 @@ export function ServicesGrid() {
                         Enquire via WhatsApp
                       </Link>
                       <Link
-                        href={service.href || "/contact"}
+                        href={"/contact"}
                         className="flex items-center justify-center gap-2 border border-gray-200 hover:border-[var(--color-brand-primary)] text-gray-700 hover:text-[var(--color-brand-primary)] px-6 py-3 rounded-xl font-medium transition-all"
                       >
-                        Learn More
+                        Contact Us
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>

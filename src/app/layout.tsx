@@ -35,10 +35,8 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative">
-        {/* Initial page loader and route changes */}
-        <Suspense fallback={null}>
-          <PageLoader />
-        </Suspense>
+        {/* Initial page loader */}
+        <PageLoader />
         {/* Page content — PageTransition is now in the marketing layout */}
         {children}
         <FloatingDock />

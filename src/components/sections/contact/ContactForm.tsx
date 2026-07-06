@@ -86,6 +86,7 @@ export function ContactForm() {
 
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof FormState, string>> = {};
+    if (!form.companyName.trim()) newErrors.companyName = "Company name is required";
     if (!form.fullName.trim()) newErrors.fullName = "Full name is required";
     if (!form.mobile.trim()) newErrors.mobile = "Mobile number is required";
     if (!form.email.trim()) newErrors.email = "Email address is required";
@@ -133,6 +134,9 @@ export function ContactForm() {
     setTimeout(() => {
       setSubmitting(false);
       window.open(url, "_blank");
+      setForm(initialState);
+      setErrors({});
+      document.getElementById("companyName")?.focus();
     }, 800);
   };
 
@@ -156,8 +160,26 @@ export function ContactForm() {
 
         <form onSubmit={handleSubmit} className="p-6 space-y-5">
 
-          {/* Row 1: Name + Company */}
+          {/* Row 1: Company + Name */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>
+                {CONTACT_FORM_CONTENT.fields.companyName.label}
+                <span className="text-red-500 ml-1 normal-case">*</span>
+              </label>
+              <input
+                id="companyName"
+                type="text"
+                name="companyName"
+                value={form.companyName}
+                onChange={handleChange}
+                placeholder={CONTACT_FORM_CONTENT.fields.companyName.placeholder}
+                className={`${inputClass} ${errors.companyName ? "border-red-400 focus:ring-red-200" : ""}`}
+              />
+              {errors.companyName && (
+                <p className="mt-1 text-xs text-red-500">{errors.companyName}</p>
+              )}
+            </div>
             <div>
               <label className={labelClass}>
                 {CONTACT_FORM_CONTENT.fields.fullName.label}
@@ -174,19 +196,6 @@ export function ContactForm() {
               {errors.fullName && (
                 <p className="mt-1 text-xs text-red-500">{errors.fullName}</p>
               )}
-            </div>
-            <div>
-              <label className={labelClass}>
-                {CONTACT_FORM_CONTENT.fields.companyName.label}
-              </label>
-              <input
-                type="text"
-                name="companyName"
-                value={form.companyName}
-                onChange={handleChange}
-                placeholder={CONTACT_FORM_CONTENT.fields.companyName.placeholder}
-                className={inputClass}
-              />
             </div>
           </div>
 

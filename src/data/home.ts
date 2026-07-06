@@ -98,9 +98,9 @@ export interface RFQStep {
 export const HOME_RFQ_CONTENT = {
   badge: "Safe & Secure Sourcing",
   heading: "Quick to Product Sourcing",
-  headingHighlight: "Yes Yes Asian Links",
+  headingHighlight: "Yes Yes Asian Link",
   description:
-    "To contact the Yes Yes Asian Links WhatsApp via contact to sourcing China products.",
+    "To contact the Yes Yes Asian Link WhatsApp via contact to sourcing China products.",
   formTitle: "Quick RFQ",
   submitLabel: "Get Quotes on WhatsApp",
   defaultUnit: "Pieces",
@@ -111,7 +111,7 @@ export const HOME_RFQ_CONTENT = {
     quantity: "Quantity *",
     quantityPlaceholder: "1000",
     unit: "Unit",
-    company: "Company Name (Optional)",
+    company: "Company Name *",
     companyPlaceholder: "e.g. Acme Corp",
   },
 };

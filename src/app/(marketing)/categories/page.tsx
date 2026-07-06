@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { productCategories, productsData } from "@/data/products";
 import { generateSlug } from "@/utils/slug";
 import { Package, ArrowRight, ChevronRight } from "lucide-react";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Browse all product categories sourced directly from verified Chinese manufacturers. From Textile & Garment to Consumer Electronics — explore our full B2B catalogue.",
   openGraph: {
-    title: "All Product Categories | Yes Yes Asian Links",
+    title: "All Product Categories | Yes Yes Asian Link",
     description:
       "Explore 10+ premium B2B product categories sourced from verified manufacturers in China.",
     type: "website",
@@ -20,7 +21,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "All Product Categories",
-  description: "Browse all B2B product categories from Yes Yes Asian Links.",
+  description: "Browse all B2B product categories from Yes Yes Asian Link.",
 };
 
 export default function CategoriesIndexPage() {
@@ -109,32 +110,46 @@ export default function CategoriesIndexPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
               {categories.map((category) => {
                 const slug = generateSlug(category.value);
-                const count = productsData.filter(
+                const categoryProducts = productsData.filter(
                   (p) => p.category === category.value
-                ).length;
+                );
+                const count = categoryProducts.length;
+                const displayImage = categoryProducts[0]?.image || "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&auto=format&fit=crop";
 
                 return (
                   <Link
                     key={category.id}
                     href={`/categories/${slug}`}
-                    className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[var(--color-brand-primary)]/30 transition-all duration-300 overflow-hidden"
+                    className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[var(--color-brand-primary)]/30 transition-all duration-300 overflow-hidden h-full"
                   >
                     {/* Accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--color-brand-primary)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--color-brand-primary)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
-                    <div className="p-6 flex flex-col flex-1">
-                      {/* Icon */}
-                      <div className="w-12 h-12 rounded-xl bg-gray-50 group-hover:bg-[var(--color-brand-primary)]/10 flex items-center justify-center mb-4 transition-colors duration-300">
-                        <Package className="w-6 h-6 text-gray-400 group-hover:text-[var(--color-brand-primary)] transition-colors duration-300" />
+                    {/* Image Area */}
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-50">
+                      <Image
+                        src={displayImage}
+                        alt={category.label}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+
+                    <div className="p-5 flex flex-col flex-1">
+                      {/* Header with Icon and Count */}
+                      <div className="flex items-start justify-between mb-3 gap-2">
+                        <h2 className="text-base font-bold text-[var(--color-brand-black)] group-hover:text-[var(--color-brand-primary)] transition-colors leading-snug line-clamp-2">
+                          {category.label}
+                        </h2>
+                        <div className="w-8 h-8 rounded-full bg-gray-50 group-hover:bg-[var(--color-brand-primary)]/10 flex items-center justify-center shrink-0 transition-colors duration-300">
+                          <Package className="w-4 h-4 text-gray-400 group-hover:text-[var(--color-brand-primary)] transition-colors duration-300" />
+                        </div>
                       </div>
 
-                      {/* Label */}
-                      <h2 className="text-base font-bold text-[var(--color-brand-black)] group-hover:text-[var(--color-brand-primary)] transition-colors mb-2 leading-snug">
-                        {category.label}
-                      </h2>
-
                       {/* Count */}
-                      <p className="text-sm text-gray-400 mb-auto">
+                      <p className="text-sm text-gray-500 mb-auto">
                         {count} products available
                       </p>
 

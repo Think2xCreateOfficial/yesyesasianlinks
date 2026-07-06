@@ -220,7 +220,7 @@ export const TOURS_EXPERIENCE_ITEMS: TourExperienceItem[] = [
     description:
       "Arrive in Guangzhou, settle into your hotel, and dive straight into the Canton Fair with your dedicated guide. Pre-booked supplier meetings and VIP hall access await.",
     image:
-      "/Hotel.webp",
+      "/cantonfair2.jpg",
     tags: ["Canton Fair", "Supplier Meetings", "VIP Access"],
   },
   {
@@ -230,7 +230,7 @@ export const TOURS_EXPERIENCE_ITEMS: TourExperienceItem[] = [
     description:
       "Guided tours through Guangzhou's major wholesale districts — furniture, textiles, electronics, and more. Meet factory owners directly and negotiate at source.",
     image:
-      "/tour4.webp",
+      "/image3.jpeg",
     tags: ["Wholesale Markets", "Direct Negotiation", "Factory Visits"],
   },
   {

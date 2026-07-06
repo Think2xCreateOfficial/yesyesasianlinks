@@ -9,32 +9,19 @@ import { Plane } from "lucide-react";
 
 export function PageLoader() {
   const [loading, setLoading] = useState(true);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const prevPathname = useRef(pathname);
-  const prevSearchParams = useRef(searchParams?.toString());
 
   useEffect(() => {
-    // Hide loader after a short delay on initial load
-    const timer = setTimeout(() => setLoading(false), 900);
-    return () => clearTimeout(timer);
-  }, []);
+    const handleComplete = () => {
+      setLoading(false);
+    };
 
-  useEffect(() => {
-    const currentParams = searchParams?.toString();
-    if (pathname !== prevPathname.current || currentParams !== prevSearchParams.current) {
-      prevPathname.current = pathname;
-      prevSearchParams.current = currentParams;
-      
-      setLoading(true);
-      
-      // Simulate network delay for route change
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 900);
-      return () => clearTimeout(timer);
+    if (document.readyState === "complete") {
+      handleComplete();
+    } else {
+      window.addEventListener("load", handleComplete);
+      return () => window.removeEventListener("load", handleComplete);
     }
-  }, [pathname, searchParams]);
+  }, []);
 
   return (
     <AnimatePresence>

@@ -11,7 +11,7 @@ export const footerData = {
   contact: [
     { id: "footer-address", title: "Guangzhou, China", icon: "MapPin", href: "#" },
     { id: "footer-phone", title: "+86 123 4567 8900", icon: "Phone", href: "tel:+8612345678900" },
-    { id: "footer-email", title: "contact@yesyesasianlink.com", icon: "Mail", href: "mailto:contact@yesyesasianlink.com" }
+    { id: "footer-email", title: "yesyesasianlink@gmail.com", icon: "Mail", href: "mailto:yesyesasianlink@gmail.com" }
   ] as ContentItem[],
   copyright: `© ${new Date().getFullYear()} YES YES ASIAN LINK. All rights reserved.`
 };

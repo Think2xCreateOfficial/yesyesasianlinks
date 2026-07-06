@@ -26,6 +26,7 @@ export interface Category {
   id: string;
   label: string;
   value: string;
+  image?: string;
 }
 
 export interface ProductCardProps {
